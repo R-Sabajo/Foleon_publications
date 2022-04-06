@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rama's frontend assessment</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="icon" type="image/x-icon" href="/img/foleon_logo.png" />
+    <script defer src="./scripts/Apiclient.js"></script>
+    <script defer src="./scripts/script.js"></script>
+  </head>
+  <body>
+    <header>
+      <img class="logo" src="./img/foleon_logo.png" alt="" />
+
+      <h1>My Foleon Publications</h1>
+    </header>
+
+    <main class="main">
+      <nav class="navbar">
+        <div class="pageControl">
+          <p id="pageText">
+            page <span id="page"></span> of <span id="pageCount"></span>
+          </p>
+          <div class="buttons">
+            <button type="button" id="pageDown"><</button>
+            <button type="button" id="pageUp">></button>
+          </div>
+        </div>
+        <div class="filterBox">
+          <label for="filter">Category</label>
+          <select title="filter" name="filter" id="filter">
+            <option value="" selected>- all categories -</option>
+            <option value="ebook">ebook</option>
+            <option value="brochure">brochure</option>
+            <option value="newsletter">newsletter</option>
+            <option value="customer_magazine">customer magazine</option>
+          </select>
+        </div>
+
+        <label for="search">
+          <input title="search" type="text" id="search" />
+          search
+        </label>
+      </nav>
+      <div class="publicationsBOX">
+        <ul id="publications"></ul>
+      </div>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
