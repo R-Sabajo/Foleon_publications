@@ -30,13 +30,15 @@ header {
   padding: 20px;
   display: flex;
   height: 100px;
-  width: 550px;
+  width: 90vw;
+  max-width: 800px;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .logo {
   width: 50px;
+  margin-right: 20px;
 }
 
 .main {
@@ -53,7 +55,8 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  width: 800px;
+  width: 90vw;
+  max-width: 800px;
   border: 1px solid grey;
   border-radius: 10px 10px 0 0;
 }
@@ -62,7 +65,8 @@ header {
   background-color: #fff;
   text-align: left;
   min-height: 570px;
-  width: 800px;
+  width: 90vw;
+  max-width: 800px;
   border: 1px solid grey;
   border-radius: 0 0 10px 10px;
   box-shadow: 0 2px 6px rgba(126, 126, 126, 0.432);
@@ -114,7 +118,7 @@ header {
   font-size: 0.9rem;
   display: none;
   position: absolute;
-  top: -60px;
+  top: -40px;
   right: -45px;
   background: #fff;
   color: rgb(0, 4, 53);
@@ -126,4 +130,7 @@ header {
 
 .pubLi:hover .pubInfo {
   display: block;
+}
+
+@media (min-width: 400) {
 }
