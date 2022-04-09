@@ -10,7 +10,7 @@
 
 let qs = require('qs');
 
-const accessToken = '1f1546121bd964400f74bf321d75823e7afa8a90';
+const accessToken = '5d80218ef4f449552ba0f72dc1b8777218ec57ec';
 
 // Get all publications based on page and limit
 let page = 1;
