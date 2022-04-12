@@ -17,6 +17,27 @@
     </header>
 
     <main class="main">
+      <div class="login-screen">
+        <div class="login-modal">
+          <h3>Please login with your credentials</h3>
+          <label for="client-id">
+            Client id
+            <input title="client-id" required type="text" id="client_id" />
+          </label>
+          <label for="client-secret">
+            Client secret
+            <input
+              title="client-secret"
+              required
+              type="password"
+              id="client_secret"
+            />
+          </label>
+          <button id="loginBtn">Login</button>
+          <p id="login_message">&nbsp;</p>
+        </div>
+      </div>
+
       <nav class="navbar">
         <div class="pageControl">
           <p id="pageText">
