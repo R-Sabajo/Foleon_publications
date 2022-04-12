@@ -40,20 +40,10 @@
     1: [function (require, module, exports) {}, {}],
     2: [
       function (require, module, exports) {
-        // Step 1: get an API keyYou can contact support at support@foleon.com for an API key. You will receive an api_key and an api_secret.
-
-        // Step 2: request an access token
         let page = 1;
         let limit = 10;
 
         let accessToken = null;
-
-        // if (accessToken) {
-        //   console.log('Access Granted');
-        //   // document.querySelector('.login-screen').classList.add('hide');
-        // } else {
-        //   console.log('Access Denied');
-        // }
 
         const reqToken = (clientId, clientSecret) => {
           fetch('https://api.foleon.com/oauth', {
@@ -75,7 +65,6 @@
                 document.querySelector('#login_message').style.color = 'Red';
                 throw Error('Failed to fetch Access Token.');
               }
-
               return res.json();
             })
             .then(data => {
@@ -86,7 +75,9 @@
                 'Access Granted. Welcome!';
 
               setTimeout(() => {
+                // Run function to get All publications based on page and limit to the DOM
                 allPubsToDOM(getPublications(page, limit));
+                //  Hide loginscreen
                 document.querySelector('.login-screen').classList.add('hide');
               }, 2000);
             })
@@ -148,8 +139,6 @@
             ],
           });
 
-          console.log(filter);
-
           let res = await fetch(
             `https://api.foleon.com/v2/magazine/edition?${filter}`,
             {
@@ -207,8 +196,6 @@
           }
         }
 
-        // Run function to get All publications based on page and limit to the DOM
-
         // FUNCTIONS:
         // Function to search on name
         const searchOnName = () => {
@@ -235,11 +222,12 @@
           clearTimeout(timeout);
           timeout = setTimeout(func, delay);
         };
+
         // Log in the application
         loginBtn.addEventListener('click', () => {
           const client_id = document.getElementById('client_id').value;
           const client_secret = document.getElementById('client_secret').value;
-          debounce(() => reqToken(client_id, client_secret), 1000);
+          debounce(() => reqToken(client_id, client_secret), 500);
           document.getElementById('client_id').value = '';
           document.getElementById('client_secret').value = '';
         });
@@ -253,7 +241,6 @@
         search.addEventListener('keyup', () => {
           if (search.value === '') {
             debounce(() => allPubsToDOM(getPublications(page, limit)), 300);
-            console.log(timeout);
           } else {
             if (page > 1) {
               page = 1;
