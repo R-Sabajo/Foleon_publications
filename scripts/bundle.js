@@ -229,7 +229,7 @@
         };
 
         // EVENT LISTENERS:
-        // Debouncer
+        // Debouncer function
         let timeout;
         const debounce = function (func, delay) {
           clearTimeout(timeout);
@@ -239,14 +239,14 @@
         loginBtn.addEventListener('click', () => {
           const client_id = document.getElementById('client_id').value;
           const client_secret = document.getElementById('client_secret').value;
-          reqToken(client_id, client_secret);
+          debounce(() => reqToken(client_id, client_secret), 1000);
           document.getElementById('client_id').value = '';
           document.getElementById('client_secret').value = '';
         });
 
         // Category Field
         filterEl.addEventListener('change', () => {
-          filterCategory(filterEl.value);
+          debounce(() => filterCategory(filterEl.value), 300);
           return;
         });
 

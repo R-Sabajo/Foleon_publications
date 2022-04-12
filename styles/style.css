@@ -82,11 +82,26 @@ header {
 }
 
 #loginBtn {
+  font-weight: bold;
   height: 40px;
   font-size: 1.1rem;
   margin-top: 10px;
+
   background-color: rgb(0, 4, 53);
   color: #fff;
+  transition: transform 100ms ease-in-out;
+  box-shadow: 0 1px 3px grey;
+}
+
+#loginBtn:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 2px 6px grey;
+  text-shadow: 0 0 7px ghostwhite;
+}
+
+#loginBtn:active {
+  transform: translateY(0px) scale(1);
+  box-shadow: 0 0px 6px grey;
 }
 
 #login_message {
