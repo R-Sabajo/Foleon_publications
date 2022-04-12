@@ -7,7 +7,9 @@ The goal of this story is to create a “Proof of Concept” a page/application 
 
 Acceptance criteria:
 
-* As a user I want to be able to display a list of (my) publications;
-* As a user I want to be able to filter the publications;
-* As a user I want to be able to search the publications by name;
-* As a user I want to be able to display a publication’s information;
+- As a user I want to be able to display a list of (my) publications;
+- As a user I want to be able to filter the publications;
+- As a user I want to be able to search the publications by name;
+- As a user I want to be able to display a publication’s information;
+
+Run the Application by opening index.html and login with your credentials
